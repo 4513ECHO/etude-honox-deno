@@ -17,18 +17,18 @@
     "dist"
   ],
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.1",
     "@hono/vite-build": "npm:@hono/vite-build@^1.1.0",
-    "@hono/vite-dev-server": "npm:@hono/vite-dev-server@^0.16.0",
-    "hono": "npm:hono@^4.4.6",
-    "honox": "npm:honox@^0.1.26",
-    "vite": "npm:vite@^5.4.10"
+    "@hono/vite-dev-server": "npm:@hono/vite-dev-server@^0.17.0",
+    "hono": "npm:hono@^4.6.12",
+    "honox": "npm:honox@^0.1.27",
+    "vite": "npm:vite@^5.4.11"
   },
   "nodeModulesDir": "auto",
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check .",
     "dev": "vite",
     "build": "vite build --mode client && vite build",
-    "preview": "cd dist && deno serve --allow-read=. index.js"
+    "preview": "deno serve --allow-read=. dist/index.js"
   }
 }

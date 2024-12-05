@@ -10,5 +10,9 @@ export default defineConfig({
     jsx: "automatic",
     jsxImportSource: "hono/jsx",
   },
-  plugins: [deno(), honox({ devServer: { adapter } }), build()],
+  plugins: [
+    deno(),
+    honox({ devServer: { adapter } }),
+    build({ external: ["hono"], staticRoot: "dist" }),
+  ],
 });
