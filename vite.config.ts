@@ -6,13 +6,17 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   cacheDir: "node_modules/.vite",
+  ssr: { external: ["react", "react-dom"] },
   esbuild: {
     jsx: "automatic",
-    jsxImportSource: "hono/jsx",
+    jsxImportSource: "react",
   },
   plugins: [
     deno(),
-    honox({ devServer: { adapter } }),
+    honox({
+      devServer: { adapter },
+      client: { jsxImportSource: "react" },
+    }),
     build({ external: ["hono"], staticRoot: "dist" }),
   ],
 });

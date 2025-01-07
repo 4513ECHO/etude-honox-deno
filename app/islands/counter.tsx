@@ -1,4 +1,5 @@
-import { useState } from "hono/jsx";
+// @ts-types="@types/react"
+import { useState } from "react";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
