@@ -1,5 +1,5 @@
 import { reactRenderer } from "@hono/react-renderer";
-import { Script } from "honox/server";
+import { Link, Script } from "honox/server";
 
 export default reactRenderer(({ children, title }) => {
   return (
@@ -10,6 +10,7 @@ export default reactRenderer(({ children, title }) => {
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <Script src="/app/client.ts" async />
+        <Link rel="stylesheet" href="/app/style.css" />
       </head>
       <body>{children}</body>
     </html>
